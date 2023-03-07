@@ -4,10 +4,11 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
+  const props= {titulo:"Bienvenidos a DeporHouse", subtitulo:"El mayor eCommerce de deportes del pais"}
   return(
     <div className = "App">
       <NavBar />
-      <ItemListContainer greeting={"Bienvenidos a DeporHouse"}/>
+      <ItemListContainer props={props}/>
     </div>
   )
 }
