@@ -1,0 +1,25 @@
+.NavBar{
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    grid-template-areas: "h1 Menu CartWidget";
+    justify-content: space-around;
+    align-items: center;
+    background-color: greenyellow;
+}
+
+.NavBar .Menu button{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.NavBar .Menu button:hover{
+    background-color: lightblue;
+}
+
+.NavBar h1{
+    font-family: 'Tourney', cursive;
+}
