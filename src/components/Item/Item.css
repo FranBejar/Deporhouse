@@ -1,0 +1,28 @@
+.Item{
+    background-color: lightblue;
+    border-color: black;
+    border-style: solid;
+    transition: .5s;
+    width: 25%;
+    margin-bottom: 1%;
+}
+
+.Item:hover{
+    background-color: lightskyblue;
+    transition: .5s;
+}
+
+button{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: lightgreen;
+    font-weight: bold;
+    transition: .5s;
+}
+
+button:hover{
+    background-color: lightsalmon;
+    transition: .5s;
+}

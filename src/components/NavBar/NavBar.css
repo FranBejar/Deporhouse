@@ -23,3 +23,8 @@
 .NavBar h1{
     font-family: 'Tourney', cursive;
 }
+
+.Logo{
+    text-decoration: none;
+    color: black;
+}
