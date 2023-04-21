@@ -39,7 +39,7 @@ const Orders = ({ handleConfirm }) => {
         }
 
         const cardCVVRegex = /^[0-9]{3}$/;
-        if(cardCVVRegex.test(userData.cardCVV)){
+        if(!cardCVVRegex.test(userData.cardCVV)){
             Swal.fire({
                 icon: 'error',
                 title: "El CVV de tarjeta debe tener exactamente 3 dígitos"
