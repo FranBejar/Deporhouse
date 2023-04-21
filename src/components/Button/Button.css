@@ -1,4 +1,4 @@
-.BtnItem{
+.BtnItem {
     color: white;
     padding-left: 8%;
     padding-right: 8%;
@@ -12,7 +12,7 @@
     border-radius: 10px;
 }
 
-.BtnItem:hover{
+.BtnItem:hover {
     background-color: #1065B5;
     transition: .5s;
 }

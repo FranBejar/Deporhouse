@@ -1,0 +1,69 @@
+.Finalizar {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: lightyellow;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.Finalizar:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.Finalizar:active {
+  transform: translateY(-1px);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border: 5px solid yellow;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2%;
+  background-color: lightgreen;
+}
+
+.imagen {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cantidad {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

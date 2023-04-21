@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Deporhouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deporhouse es un eCommerce dedicado a la venta de articulos deportivos de diferentes disciplinas
 
-## Available Scripts
+Este eComemerce fue desarrollado utilizando la libreria React JS
 
-In the project directory, you can run:
+A su vez, para el mismo se utilizo la libreria sweetalert2 para generar alertas con mejor estilo visual que las alertas regulares
 
-### `npm start`
+A su vez, utiliza para el logo la libreria Tourney cursive de Google Fonts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalacion
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para clonar el proyecto debe ejecutar el siguiente comando
 
-### `npm test`
+```bash
+git clone https://github.com/FranBejar/Deporhouse
+```
+A su vez debe tener npm descargado e instalado
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para utilizar la biblioteca sweetalert2 debe ejecutar el siguiente comando
 
-### `npm run build`
+```bash
+$ npm install sweetalert2
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para dar inicio al proyecto ejecute el siguiente comando
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como Funciona
 
-### `npm run eject`
+El eCommerce se recorre a traves de rutas, las cuales se encuentran en App.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+El proyecto se ejecuta en su localhost:3000, al usar npm start los redirige automaticamente a esa pagina en su navegador
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Todos los componentes se encuentran en la carpeta components/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Los componentes principales son los siguientes:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+>Item -> Logica de productos
 
-## Learn More
+>Item Detail -> Detalle de productos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+>Item List -> Listado de productos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>Item Count -> Contador para agregar o quitar cantidad de productos a comprar
 
-### Code Splitting
+>NavBar -> Barra de navegación entre las diferentes categorias
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+>Cart -> Listado de productos a comprar
 
-### Analyzing the Bundle Size
+>Checkout -> Este se ocupa de enviar los datos del formulario a la base de datos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## FireBase
 
-### Making a Progressive Web App
+El eCommerce utiliza Cloud Firestore como base de datos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Todo lo relacionado a Firebase se encuentra en la carpeta service\firebase
 
-### Advanced Configuration
+>firebaseConfig.js -> Esta inicializa la app y hace referencia a la base de datos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+>orders.js -> Este proporciona el formulario de checkout y genera las ordenes que se van a enviar en Checkout.js
 
-### Deployment
+>products.js -> Proporciona el filtrado de productos por categoria o id de item a ItemListContainer e ItemDetailContainer respectivamente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## CoderHouse
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto fue creado durante el desarrollo de la comision 51550 del curso de React JS

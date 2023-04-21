@@ -1,37 +1,54 @@
 import {useEffect,useState} from 'react'
-import {getProducts,getProductsByCategory} from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import {useParams} from 'react-router-dom'
+import Loader from '../Loader/Loader'
+import fail from '../../assets/error.png'
 import './ItemListContainer.css'
+import { getProducts } from '../../service/firebase/firestore/products'
 
 const ItemListContainer = ({ props }) => {
 
-    const[productsState, setProductsState] = useState([])
+    const[products, setProducts] = useState([])
     const[loading,setLoading] = useState(true)
+    const[error,setError] = useState(false)
 
     const{categoryID} = useParams()
 
     useEffect(() => {
-        setLoading(true)
-        const asyncFunction = categoryID ? getProductsByCategory : getProducts
 
-        asyncFunction(categoryID)
+        setLoading(true)
+
+        getProducts(categoryID)
             .then(products => {
-                setProductsState(products)
+                setProducts(products)
             })
             .catch(error => {
-                console.log(error)
+                if(error){
+                    setError(true)
+                }
             })
             .finally(() => {
-                setLoading(false)
+                setTimeout(() => {
+                    setLoading(false)
+                },1000)
             })
+
     }, [categoryID])
 
     if(loading){
-        return <h1>Cargando, aguarde por favor</h1>
+        return <Loader/>
     }
 
-    if(productsState && productsState.length === 0){
+    if(error){
+        return(
+            <div className='MsgError'>
+                <h1>Oops... tuvimos un problema, por favor recargue la pagina</h1>
+                <img src={fail} alt="pelota-error"/>
+            </div>
+        )
+    }
+
+    if(products && products.length === 0){
         return <h1>No hay Productos</h1>
     }
 
@@ -39,7 +56,7 @@ const ItemListContainer = ({ props }) => {
         <div class="title">
             <h1>{props.titulo}</h1>
             <h2>{props.subtitulo}</h2>
-            <ItemList products={productsState}/>
+            <ItemList products={products}/>
         </div>
     )
 }

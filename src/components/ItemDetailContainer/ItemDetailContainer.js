@@ -1,38 +1,54 @@
 import {useEffect,useState} from "react"
-import {getProductByID} from "../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import Counter from "../Counter/Counter"
 import {useParams} from "react-router-dom"
+import Loader from "../Loader/Loader"
+import fail from '../../assets/error.png'
 import "../ItemDetailContainer/ItemDetailContainer.css"
+import { getProductsByID } from "../../service/firebase/firestore/products"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
+    const[error,setError] = useState(false)
 
     const {itemID} = useParams()
 
     useEffect(() => {
+
         setLoading(true)
-        getProductByID(itemID)
-            .then(product => {
-                setProduct(product)
+
+        getProductsByID(itemID)
+            .then(prodById => {
+                setProduct(prodById)
             })
             .catch(error => {
-                console.log(error)
+                if(error){
+                    setError(true)
+                }
             })
             .finally(() => {
-                setLoading(false)
+                setTimeout(() => {
+                    setLoading(false)
+                },1000)
             })
     }, [itemID])
 
     if(loading){
-        return <h1>Cargando, aguarde por favor</h1>
+        return <Loader/>
+    }
+
+    if(error){
+        return(
+            <div className='MsgError'>
+                <h1>Oops... tuvimos un problema al cargar el producto, por favor recargue la pagina</h1>
+                <img src={fail} alt="pelota-error"/>
+            </div>
+        )
     }
 
     return(
         <div className="Producto">
             <ItemDetail {...product}/>
-            <Counter {...product}/>
         </div>
     )
 }

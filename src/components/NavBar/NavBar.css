@@ -7,7 +7,7 @@
     background-color: greenyellow;
 }
 
-.NavBar .Menu button{
+.BtnOption button {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 1%;
@@ -16,8 +16,17 @@
     font-weight: bold;
 }
 
-.NavBar .Menu button:hover{
+.BtnOption button:hover{
     background-color: lightblue;
+}
+
+.Active button{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: lightblue;
+    font-weight: bold;
 }
 
 .NavBar h1{
@@ -27,4 +36,8 @@
 .Logo{
     text-decoration: none;
     color: black;
+}
+
+.MsgError{
+    margin-top: 10%;
 }
